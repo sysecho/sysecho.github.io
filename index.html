@@ -7,12 +7,20 @@
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
     <title>小灰机的个人主页</title>   
   </head>
-  <body>	        
-	<div class="containers">
-	  	<div class="bg bg-blur"></div>
-
-        <div class="content">你好啊，小飞机！<img src="img/laugh.png" style="transform:rotate(180deg);"></div>
-	</div>
+  <body>	
+  	<div style="min-height:100vh;background:#FFFFF0;">
+  		<div class="containers">
+		  	<div class="bg bg-blur"></div>
+	        <div class="content">你好啊，小飞机！<img src="img/laugh.png" style="transform:rotate(180deg);"></div>
+		</div>
+		<div class="music">
+			<audio autoplay="autoplay" loop="loop">			  
+			  <source src="music/littleLuck.mp3" type="audio/mpeg">
+				您的浏览器不支持 audio 元素。
+			</audio>
+		</div>
+  	</div>        
+	
 
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
     <script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>

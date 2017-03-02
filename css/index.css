@@ -20,10 +20,10 @@
 .content{
     position: absolute;
     left: 0;
-    top: 45%;
+    top: 40%;
     width: 100%;
     text-align: center;
-    font-size: 18px;
+    font-size: 2em;
     color: #ffffff;
     transform:rotate(180deg);
 }
