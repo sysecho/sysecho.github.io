@@ -4,7 +4,10 @@
 
 .bg {
     background: url('../img/bg_img.jpg');
-    height:30vh;
+    height:35vh;
+    background-size: cover; 
+    -webkit-background-size: cover;/* 兼容Webkit内核浏览器如Chrome和Safari */ 
+    -o-background-size: cover;/* 兼容Opera */  
     text-align: center;
     max-width: 100%;
 }
@@ -13,8 +16,6 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    -webkit-filter: blur(5px);
-    filter: blur(5px);
 }
 .content{
     position: absolute;
