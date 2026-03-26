@@ -1,45 +1,519 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">       
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
-    <title>小灰机的个人主页</title>   
-  </head>
-  <body>	
-  	<div style="min-height:100vh;background:#FFFFF0;">
-  		<div class="containers">
-		  	<div class="bg bg-blur"></div>
-	        <div class="content"  align="center">
-	        	<div style="width: 100%;text-align: center;padding-left: 30%;">
-	        		<div style="float: left;">打雷啦,下雨收衣服咯,千万别往下看 ———— </div><div style="float: left;transform:rotate(180deg);"><img src="img/laugh.png" style="transform:rotate(180deg);" >小飞机</div>
-	        	</div>
-	        </div>
-		</div>
-		<!-- music -->
-		<div style="width:100%;">
-			<div align="left" style="width: 30%;float: left;height: 4vh;background: #fafafa;">
-				<font style="color:#9c9c9c;font-family:microsoft yahei;font-size: 12px;">Copyright &copy; 2017-2018, SYSECHO.WIN, All Rights Reserved</font>
-			</div>
-			<div id="google_translate_element" style="width: 30%;float: left;"></div>
-			<div align="right" style="width: 40%;float: left;height: 4vh;background: #fafafa;">
-				<audio controls autoplay loop>
-				  	<source src="music/rain.m4a" type="audio/mpeg">
-					您的浏览器不支持 audio 元素。
-				</audio>
-			</div>
-		</div>
-  	</div>        
-        
-    <!-- jQuery first, then Tether, then Bootstrap JS. -->
-    <script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
-    <link href="https://cdn.bootcss.com/tether/1.3.6/css/tether.min.css" rel="stylesheet">
-    <script src="https://cdn.bootcss.com/tether/1.3.6/js/tether.min.js"></script>
-    <script src="https://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
-    <link href="https://cdn.bootcss.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" rel="stylesheet"></script>
-    
-	<link href="css/index.css" rel="stylesheet">
-    <script src="js/index.js" type="text/javascript"></script>
-  </body>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>按时吃药 - 用户隐私政策</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      font-size: 14px;
+      line-height: 1.8;
+      color: #333;
+      background: #f7f8fa;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%);
+      color: #fff;
+      padding: 32px 20px 24px;
+      text-align: center;
+    }
+    .header h1 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .header p {
+      font-size: 12px;
+      opacity: 0.85;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+
+    .update-bar {
+      background: #fff;
+      border-radius: 10px;
+      padding: 12px 16px;
+      margin-bottom: 12px;
+      font-size: 12px;
+      color: #888;
+      display: flex;
+      justify-content: space-between;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+
+    .tip-box {
+      background: #EFF6FF;
+      border-left: 4px solid #4A90E2;
+      border-radius: 0 10px 10px 0;
+      padding: 14px 16px;
+      margin-bottom: 16px;
+      font-size: 13px;
+      color: #2563EB;
+      line-height: 1.7;
+    }
+    .tip-box strong { display: block; margin-bottom: 4px; font-size: 14px; }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 12px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+    }
+
+    .section-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #EFF6FF;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-title .icon {
+      width: 28px;
+      height: 28px;
+      background: linear-gradient(135deg, #4A90E2, #357ABD);
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    h3 {
+      font-size: 14px;
+      font-weight: 600;
+      color: #333;
+      margin: 16px 0 8px;
+    }
+    h3:first-child { margin-top: 0; }
+
+    p { margin-bottom: 10px; color: #555; font-size: 14px; }
+    p:last-child { margin-bottom: 0; }
+
+    ul, ol {
+      padding-left: 18px;
+      margin-bottom: 10px;
+    }
+    li {
+      color: #555;
+      font-size: 14px;
+      margin-bottom: 6px;
+      line-height: 1.7;
+    }
+
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 10px 0;
+      font-size: 13px;
+    }
+    .info-table th {
+      background: #F0F6FF;
+      color: #2563EB;
+      font-weight: 600;
+      padding: 10px 10px;
+      text-align: left;
+      border: 1px solid #D9E8FF;
+    }
+    .info-table td {
+      padding: 9px 10px;
+      border: 1px solid #EBEBEB;
+      color: #555;
+      vertical-align: top;
+    }
+    .info-table tr:nth-child(even) td { background: #FAFBFF; }
+
+    .sdk-item {
+      background: #F9FAFB;
+      border-radius: 8px;
+      padding: 14px;
+      margin-bottom: 10px;
+      border: 1px solid #EBEBEB;
+    }
+    .sdk-item:last-child { margin-bottom: 0; }
+    .sdk-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin-bottom: 6px;
+    }
+    .sdk-detail { font-size: 13px; color: #666; line-height: 1.7; }
+    .sdk-detail span { color: #888; margin-right: 4px; }
+    .sdk-link { color: #4A90E2; text-decoration: none; word-break: break-all; }
+
+    .highlight {
+      background: #FFFBEB;
+      border: 1px solid #FDE68A;
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin: 10px 0;
+      font-size: 13px;
+      color: #92400E;
+    }
+
+    .right-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px solid #F0F0F0;
+    }
+    .right-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .right-tag {
+      background: #EFF6FF;
+      color: #2563EB;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 4px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .right-desc { font-size: 13px; color: #555; line-height: 1.7; }
+
+    .contact-box {
+      background: linear-gradient(135deg, #EFF6FF, #DBEAFE);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+    }
+    .contact-box .email {
+      font-size: 16px;
+      font-weight: 700;
+      color: #2563EB;
+      margin: 8px 0;
+    }
+    .contact-box p { color: #555; font-size: 13px; margin-bottom: 0; }
+
+    .footer {
+      text-align: center;
+      padding: 24px 20px;
+      font-size: 12px;
+      color: #aaa;
+    }
+
+    @media (min-width: 600px) {
+      .container { padding: 24px; }
+      .card { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <h1>💊 按时吃药</h1>
+  <p>用户隐私政策 · Privacy Policy</p>
+</div>
+
+<div class="container">
+
+  <div class="update-bar">
+    <span>版本：1.0</span>
+    <span>更新日期：2026年3月26日</span>
+  </div>
+
+  <div class="tip-box">
+    <strong>📋 隐私政策摘要</strong>
+    「按时吃药」是一款本地服药提醒工具。我们<strong>不收集您的身份信息</strong>，提醒时间数据仅存储在您的设备上。我们仅使用推送服务来发送药物提醒通知，不会将您的数据出售或用于广告。
+  </div>
+
+  <!-- 一、概述 -->
+  <div class="card">
+    <div class="section-title">
+      <span class="icon">📄</span>一、概述
+    </div>
+    <p>
+      「按时吃药」（以下简称"本应用"）由个人开发者开发和运营，包名为 <code>uni.app.UNI25F811F</code>。本隐私政策适用于您使用本应用的全部场景。
+    </p>
+    <p>
+      在您使用本应用前，请认真阅读本隐私政策。<strong>您一旦开始使用本应用，即表示您已同意本政策的全部内容。</strong>如果您不同意本政策，请停止使用本应用。
+    </p>
+    <p>
+      我们承诺：严格遵守《中华人民共和国个人信息保护法》《网络安全法》以及华为应用市场相关规范，最小化收集您的个人信息，保障您的合法权益。
+    </p>
+  </div>
+
+  <!-- 二、收集的个人信息 -->
+  <div class="card">
+    <div class="section-title">
+      <span class="icon">📊</span>二、我们收集的信息
+    </div>
+
+    <h3>2.1 我们收集的信息类型</h3>
+    <table class="info-table">
+      <thead>
+        <tr>
+          <th>信息类型</th>
+          <th>具体内容</th>
+          <th>收集目的</th>
+          <th>是否必须</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>设备标识</td>
+          <td>推送客户端标识（CID），由个推 SDK 生成，不含真实设备 ID</td>
+          <td>发送药物提醒推送通知</td>
+          <td>是</td>
+        </tr>
+        <tr>
+          <td>提醒设置</td>
+          <td>您设定的服药提醒时间（如 08:00、20:00）</td>
+          <td>在指定时间发送提醒</td>
+          <td>是</td>
+        </tr>
+        <tr>
+          <td>服药记录</td>
+          <td>您标记的当日是否已服药（是/否）</td>
+          <td>避免重复提醒，提供服药统计</td>
+          <td>否（可选功能）</td>
+        </tr>
+        <tr>
+          <td>语言偏好</td>
+          <td>中文/英文界面选择</td>
+          <td>推送通知使用对应语言</td>
+          <td>否</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>2.2 我们不收集的信息</h3>
+    <ul>
+      <li>不收集您的姓名、手机号、身份证号等个人身份信息</li>
+      <li>不收集您的精确地理位置信息</li>
+      <li>不收集您的通讯录、相册、摄像头等敏感权限数据</li>
+      <li>不收集您的药物名称、病历、健康诊断等医疗信息</li>
+      <li>不追踪您在其他 App 中的行为</li>
+    </ul>
+
+    <h3>2.3 信息存储位置</h3>
+    <p>
+      您的提醒时间和服药记录<strong>仅存储在您的手机本地</strong>，不上传至服务器。推送标识（CID）存储在 uniCloud 云数据库中，用于向您的设备发送提醒通知，服务器位于<strong>中国境内（阿里云）</strong>。
+    </p>
+  </div>
+
+  <!-- 三、信息使用 -->
+  <div class="card">
+    <div class="section-title">
+      <span class="icon">🎯</span>三、信息的使用方式
+    </div>
+    <p>我们仅将收集到的信息用于以下目的：</p>
+    <ol>
+      <li><strong>发送药物提醒通知</strong>：根据您设定的时间，通过推送服务向您的设备发送服药提醒。</li>
+      <li><strong>避免重复提醒</strong>：记录当日是否已提醒，防止同一时间多次推送。</li>
+      <li><strong>功能改善</strong>：分析推送到达率等匿名统计数据，用于改善提醒的可靠性。</li>
+    </ol>
+    <div class="highlight">
+      ⚠️ 我们<strong>不会</strong>将您的信息用于广告推送、用户画像分析、出售给第三方，或任何与药物提醒无关的用途。
+    </div>
+  </div>
+
+  <!-- 四、第三方SDK -->
+  <div class="card">
+    <div class="section-title">
+      <span class="icon">🔌</span>四、第三方 SDK 说明
+    </div>
+    <p>本应用集成了以下第三方 SDK，请查看其隐私政策了解相关数据处理方式：</p>
+
+    <div class="sdk-item">
+      <div class="sdk-name">📨 个推 UniPush 2.0（消息推送）</div>
+      <div class="sdk-detail">
+        <div><span>开发商：</span>每日互动股份有限公司（个推）</div>
+        <div><span>使用目的：</span>发送药物服用提醒推送通知</div>
+        <div><span>收集信息：</span>设备标识符（CID）、设备型号、操作系统版本、网络状态</div>
+        <div><span>隐私政策：</span><a class="sdk-link" href="https://www.getui.com/privacy" target="_blank">https://www.getui.com/privacy</a></div>
+      </div>
+    </div>
+
+    <div class="sdk-item">
+      <div class="sdk-name">☁️ uniCloud（阿里云）</div>
+      <div class="sdk-detail">
+        <div><span>开发商：</span>DCloud（数字天堂）/ 阿里云</div>
+        <div><span>使用目的：</span>存储推送设备标识，执行定时推送任务</div>
+        <div><span>收集信息：</span>推送 CID、提醒时间设置、语言设置</div>
+        <div><span>数据中心：</span>中国境内（阿里云华东）</div>
+        <div><span>隐私政策：</span><a class="sdk-link" href="https://uniapp.dcloud.net.cn/protocol.html" target="_blank">https://uniapp.dcloud.net.cn/protocol.html</a></div>
+      </div>
+    </div>
+
+    <div class="sdk-item">
+      <div class="sdk-name">📱 DCloud uni-app 运行框架</div>
+      <div class="sdk-detail">
+        <div><span>开发商：</span>数字天堂（北京）网络技术有限公司</div>
+        <div><span>使用目的：</span>提供 App 运行环境</div>
+        <div><span>收集信息：</span>可能收集设备信息用于运行时统计，详见其政策</div>
+        <div><span>隐私政策：</span><a class="sdk-link" href="https://uniapp.dcloud.net.cn/privacy.html" target="_blank">https://uniapp.dcloud.net.cn/privacy.html</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 五、权限申请 -->
+  <div class="card">
+    <div class="section-title">
+      <span class="icon">🔐</span>五、应用权限说明
+    </div>
+    <p>本应用仅申请以下系统权限，不申请任何不必要的敏感权限：</p>
+    <table class="info-table">
+      <thead>
+        <tr>
+          <th>权限名称</th>
+          <th>用途说明</th>
+          <th>是否必须</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>通知权限（POST_NOTIFICATIONS）</td>
+          <td>向您发送服药提醒通知</td>
+          <td>是（核心功能）</td>
+        </tr>
+        <tr>
+          <td>精确闹钟（SCHEDULE_EXACT_ALARM）</td>
+          <td>在精确时间触发服药提醒</td>
+          <td>是（核心功能）</td>
+        </tr>
+        <tr>
+          <td>开机自启（RECEIVE_BOOT_COMPLETED）</td>
+          <td>手机重启后自动恢复提醒计划</td>
+          <td>是（保证提醒连续性）</td>
+        </tr>
+        <tr>
+          <td>前台服务（FOREGROUND_SERVICE）</td>
+          <td>保持提醒服务在后台运行，防止被系统终止</td>
+          <td>是</td>
+        </tr>
+        <tr>
+          <td>忽略电池优化（REQUEST_IGNORE_BATTERY_OPTIMIZATIONS）</td>
+          <td>防止系统省电策略阻止提醒推送</td>
+          <td>建议开启（用户可拒绝）</td>
+        </tr>
+        <tr>
+          <td>网络访问（INTERNET）</td>
+          <td>同步提醒设置、接收推送通知</td>
+          <td>是</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="margin-top:12px;">本应用<strong>不申请</strong>位置、摄像头、通讯录、麦克风、存储等敏感权限。</p>
+  </div>
+
+  <!-- 六、数据保留与删除 -->
+  <div class="card">
+    <div class="section-title">
+      <span class="icon">🗑️</span>六、数据保留与删除
+    </div>
+    <h3>6.1 保留期限</h3>
+    <ul>
+      <li><strong>本地数据</strong>（提醒时间、服药记录）：存储在您的设备上，卸载应用后自动清除。</li>
+      <li><strong>云端推送标识（CID）</strong>：您关闭推送功能或卸载应用后，将在 <strong>30 天内</strong>从云端数据库中删除。</li>
+    </ul>
+    <h3>6.2 主动删除</h3>
+    <p>您可通过以下方式删除您的数据：</p>
+    <ul>
+      <li>在 App 内关闭所有提醒并清空设置，云端记录将同步停止使用</li>
+      <li>卸载本应用，本地数据立即清除</li>
+      <li>通过下方联系方式发送数据删除请求，我们将在 <strong>15个工作日</strong>内处理</li>
+    </ul>
+  </div>
+
+  <!-- 七、用户权利 -->
+  <div class="card">
+    <div class="section-title">
+      <span class="icon">✅</span>七、您的权利
+    </div>
+    <p>根据《个人信息保护法》，您享有以下权利：</p>
+
+    <div class="right-item">
+      <span class="right-tag">知情权</span>
+      <span class="right-desc">了解我们收集、使用您个人信息的情况（即本隐私政策）。</span>
+    </div>
+    <div class="right-item">
+      <span class="right-tag">查阅权</span>
+      <span class="right-desc">查阅我们持有的关于您的个人信息（提醒设置、推送标识）。</span>
+    </div>
+    <div class="right-item">
+      <span class="right-tag">更正权</span>
+      <span class="right-desc">通过 App 内设置页直接修改您的提醒时间等信息。</span>
+    </div>
+    <div class="right-item">
+      <span class="right-tag">删除权</span>
+      <span class="right-desc">要求删除您的个人信息，包括云端推送标识。</span>
+    </div>
+    <div class="right-item">
+      <span class="right-tag">撤回同意</span>
+      <span class="right-desc">随时关闭推送通知权限，停止我们向您发送提醒。</span>
+    </div>
+    <div class="right-item">
+      <span class="right-tag">投诉权</span>
+      <span class="right-desc">如认为我们侵害了您的权利，可向国家网信部门或相关主管机关投诉举报。</span>
+    </div>
+
+    <p style="margin-top:14px;">如需行使上述权利，请通过第九节联系方式与我们联系。</p>
+  </div>
+
+  <!-- 八、儿童保护 -->
+  <div class="card">
+    <div class="section-title">
+      <span class="icon">👶</span>八、未成年人保护
+    </div>
+    <p>
+      本应用面向 <strong>14 周岁以上</strong>用户设计。我们不会故意收集 14 周岁以下未成年人的个人信息。
+    </p>
+    <p>
+      如果您是未满 14 周岁的未成年人，请在监护人的陪同下使用本应用，并在监护人阅读并同意本隐私政策后方可使用。如果监护人发现我们无意中收集了未成年人的个人信息，请立即联系我们，我们将及时予以删除。
+    </p>
+  </div>
+
+  <!-- 九、联系我们 -->
+  <div class="card">
+    <div class="section-title">
+      <span class="icon">📬</span>九、联系我们
+    </div>
+    <div class="contact-box">
+      <p>如果您对本隐私政策有任何疑问、意见或权利请求，请通过以下方式联系我们：</p>
+      <div class="email">echo_xian@qq.com</div>
+      <p>我们将在收到您的请求后 <strong>15 个工作日</strong>内予以回复。</p>
+    </div>
+  </div>
+
+  <!-- 十、政策更新 -->
+  <div class="card">
+    <div class="section-title">
+      <span class="icon">🔄</span>十、隐私政策的更新
+    </div>
+    <p>
+      随着应用功能的迭代更新，本隐私政策可能会进行修订。如发生重大变更（如新增收集信息类型、改变信息使用目的等），我们将通过以下方式通知您：
+    </p>
+    <ul>
+      <li>在 App 启动时弹出显著提示</li>
+      <li>在应用内更新隐私政策页面，并注明更新日期</li>
+    </ul>
+    <p>
+      更新后的政策在发布时立即生效。如您继续使用本应用，即视为您接受修订后的隐私政策。如不同意，请停止使用并卸载本应用。
+    </p>
+    <p><strong>本版本生效日期：2026年3月26日</strong></p>
+  </div>
+
+</div>
+
+<div class="footer">
+  © 2026 按时吃药 · 保留所有权利<br>
+  本文档符合《个人信息保护法》及华为应用市场隐私合规要求
+</div>
+
+</body>
 </html>
